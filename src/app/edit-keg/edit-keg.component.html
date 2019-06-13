@@ -1,13 +1,18 @@
 <div *ngIf="childSelectedKeg">
-  <h3>{{childSelectedKeg.description}}</h3>
+  <h3>{{childSelectedKeg.name}}</h3>
   <p>Keg Complete? {{childSelectedKeg.done}}</p>
   <h3>Edit Keg</h3>
-  <label>Enter Keg Description:</label>
-  <input [(ngModel)]="childSelectedKeg.description">
-  <label>Enter Keg Priority (1-3):</label>
+  <label>Enter Keg Name:</label>
+  <input [(ngModel)]="childSelectedKeg.name">
+  <label>Enter Keg Flavor:</label>
+  <input [(ngModel)]="childSelectedKeg.flavor">
+  <label>Enter Keg Brand:</label>
+  <input [(ngModel)]="childSelectedKeg.brand">
+
+  <label>Enter Keg Price (1-3):</label>
   <br>
-  <input type="radio" [(ngModel)]="childSelectedKeg.priority" [value]="1">1 (Low Priority)<br>
-  <input type="radio" [(ngModel)]="childSelectedKeg.priority" [value]="2">2 (Medium Priority)<br>
-  <input type="radio" [(ngModel)]="childSelectedKeg.priority" [value]="3">3 (High Priority)
+  <input type="radio" [(ngModel)]="childSelectedKeg.price" [value]="2">1 (Low Price)<br>
+  <input type="radio" [(ngModel)]="childSelectedKeg.price" [value]="3">2 (Medium Price)<br>
+  <input type="radio" [(ngModel)]="childSelectedKeg.price" [value]="4">3 (High Price)
   <button (click)="finishedEditing()">Done</button>
 </div>

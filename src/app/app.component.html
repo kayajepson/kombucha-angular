@@ -1,7 +1,9 @@
-<h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
+<h1>Kayhea Kombucha</h1>
+<br><hr>
 <h3>{{currentFocus}}</h3>
 <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
 
 
 <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
+<br><br><hr>
 <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>

@@ -1,13 +1,15 @@
-<select (change)="onChange($event.target.value)">
-  <option value="allKegs">All Kegs</option>
-  <option value="completedKegs">Completed Kegs</option>
-  <option value="incompleteKegs" selected="selected">Incomplete Kegs</option>
-</select>
 
 <ul>
-  <li [class]="priorityColor(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">{{currentKeg.description}} {{currentKeg.priority}}
+  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness"><strong>{{currentKeg.name}}</strong> | ${{currentKeg.price}}.00 | {{currentKeg.flavor}} | {{currentKeg.brand}}
     <input *ngIf="currentKeg.done === true" type="checkbox" checked (click)="toggleDone(currentKeg, false)"/>
     <input *ngIf="currentKeg.done === false" type="checkbox" (click)="toggleDone(currentKeg, true)"/>
     <button (click)="editButtonClicked(currentKeg)">Edit!</button>
   </li>
 </ul>
+
+
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs">All Kegs</option>
+  <option value="completedKegs">Completed Kegs</option>
+  <option value="incompleteKegs" selected="selected">Incomplete Kegs</option>
+</select>
